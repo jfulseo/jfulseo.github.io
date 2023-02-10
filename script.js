@@ -35,6 +35,32 @@ window.onload = () => {
                 });
             
                 const box = document.createElement("a-box");
+        
+                let _scale = 20;
+                if(dist > 1){
+                    _scale = 20;
+                }else if(dist > 0.9){
+                    _scale = 19;
+                }else if(dist > 0.8){
+                    _scale = 18;
+                }else if(dist > 0.7){
+                    _scale = 17;
+                }else if(dist > 0.6){
+                    _scale = 16;
+                }else if(dist > 0.5){
+                    _scale = 15;
+                }else if(dist > 0.4){
+                    _scale = 14;
+                }else if(dist > 0.3){
+                    _scale = 13;
+                }else if(dist > 0.2){
+                    _scale = 12;
+                }else if(dist > 0.1){
+                    _scale = 11;
+                }else{
+                    _scale = 10;                  
+                }
+        
                 box.setAttribute("scale", {
                     x: 20,
                     y: 20,
@@ -48,7 +74,7 @@ window.onload = () => {
                 } );
             
                 const text = document.createElement("a-text");
-                const textScale = 70;
+                const textScale = 40;
                 text.setAttribute("look-at", "[gps-new-camera]");
                 text.setAttribute("scale", {
                     x: textScale,
@@ -56,9 +82,9 @@ window.onload = () => {
                     z: textScale
                 });
                 if(dist > 1){
-                    text.setAttribute("value", dist.toFixed(3) +"km, "+bear);
+                    text.setAttribute("value", dist.toFixed(3) +"km"+bear+"°");
                 }else{
-                    text.setAttribute("value", (dist.toFixed(3)*1000)+"m, "+bear);
+                    text.setAttribute("value", (dist.toFixed(3)*1000)+"m"+bear+"°");
                 }
                 text.setAttribute("align", "center");
                 compoundEntity.appendChild(box);
