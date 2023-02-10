@@ -15,7 +15,7 @@ window.onload = () => {
         // 거리
         const dist = getDistanceFromLatLonInKm(_latitude, _longitude, e.detail.position.latitude,e.detail.position.longitude);
         // 각도
-        //const bear = bearing(_latitude, _longitude, e.detail.position.latitude,e.detail.position.longitude);
+        const bear = bearing(_latitude, _longitude, e.detail.position.latitude,e.detail.position.longitude);
 
 
         //console.log(e);
@@ -75,7 +75,7 @@ window.onload = () => {
                 } );
             
                 const text = document.createElement("a-text");
-                const textScale = 40;
+                const textScale = 100;
                 text.setAttribute("look-at", "[gps-new-camera]");
                 text.setAttribute("scale", {
                     x: textScale,
@@ -83,9 +83,9 @@ window.onload = () => {
                     z: textScale
                 });
                 if(dist > 1){
-                    text.setAttribute("value", dist.toFixed(2));
+                    text.setAttribute("value", dist.toFixed(2)+"km,"+bear+"°");
                 }else{
-                    text.setAttribute("value", (dist.toFixed(2)*1000));
+                    text.setAttribute("value", (dist.toFixed(2)*1000)+"m,"+bear+"°");
                 }
                 text.setAttribute("align", "center");
                 compoundEntity.appendChild(box);
