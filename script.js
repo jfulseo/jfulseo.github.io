@@ -4,13 +4,19 @@ window.onload = () => {
     const el = document.querySelector("[gps-new-camera]");
 
     el.addEventListener("gps-camera-update-position", async(e) => {
+        
+        console.log(e);
+        
         if(!downloaded) {
             const west = e.detail.position.longitude - 0.05,
                   east = e.detail.position.longitude + 0.05,
                   south = e.detail.position.latitude - 0.05;
                   north = e.detail.position.latitude + 0.05;
-            console.log(`${west} ${south} ${east} ${north}`);
+            //console.log(`${west} ${south} ${east} ${north}`);
             const response = await fetch(`https://hikar.org/webapp/map?bbox=${west},${south},${east},${north}&layers=poi&outProj=4326`);
+            
+            console.log(response);
+            
             const pois = await response.json();
             pois.features.forEach ( feature => {
                 const compoundEntity = document.createElement("a-entity");
