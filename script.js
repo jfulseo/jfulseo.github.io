@@ -81,7 +81,7 @@ window.onload = () => {
         } );
 
         const text = document.createElement("a-text");
-
+        textScale =1000;
         text.setAttribute("look-at", "[gps-new-camera]");
         text.setAttribute("scale", {
             x: textScale,
@@ -97,7 +97,7 @@ window.onload = () => {
             _txt = dist.toFixed(3)*1000 + 'm';
         }
 
-        alert(_txt);
+        //alert(_txt);
         
         text.setAttribute("value", _txt);
         text.setAttribute("align", "center");
