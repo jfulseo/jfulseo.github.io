@@ -62,9 +62,9 @@ window.onload = () => {
                 }
         
                 box.setAttribute("scale", {
-                    x: 20,
-                    y: 20,
-                    z: 20
+                    x: _scale,
+                    y: _scale,
+                    z: _scale
                 });
                 box.setAttribute('material', { color: 'red' } );
                 box.setAttribute("position", {
