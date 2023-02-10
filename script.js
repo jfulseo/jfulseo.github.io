@@ -82,7 +82,7 @@ window.onload = () => {
                 box.setAttribute('material', { color: 'red' } );
                 box.setAttribute("position", {
                     x : 0,
-                    y : 20,
+                    y : 15,
                     z: 0
                 } );
             
@@ -95,13 +95,14 @@ window.onload = () => {
                     z: textScale
                 });
         
-                let _txt = "text";
+                let _txt = dist.toFixed(2)+"k";
+        /*
                 if(dist > 1){
                     _txt = dist.toFixed(2) + "k";
                 }else{
-                    _txt = (dist.toFixed(3)*1000);
+                    _txt = dist.toFixed(2);
                 }
-        
+        */
                 text.setAttribute("value", _txt);
                 text.setAttribute("align", "center");
                 compoundEntity.appendChild(box);
