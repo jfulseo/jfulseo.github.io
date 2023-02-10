@@ -4,11 +4,13 @@ window.onload = () => {
     const el = document.querySelector("[gps-new-camera]");
 
     let lastEntity;
+
+    const latitude = 35.2664;
+    const longitude = 129.0931;
+
     
     el.addEventListener("gps-camera-update-position", e => {
         
-        const latitude = 35.2664;
-        const longitude = 129.0931;
         
         // 거리
         const dist = getDistanceFromLatLonInKm(latitude,longitude,e.detail.position.latitude,e.detail.position.longitude);
