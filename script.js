@@ -5,13 +5,21 @@ window.onload = () => {
     // first get current user location
     return navigator.geolocation.getCurrentPosition(function (position) {
 
+                    const latitude = 35.2664;
+                    const longitude = 129.0931;
+
       
+                    // add place name
                     const placeText = document.createElement('a-link');
                     placeText.setAttribute('gps-entity-place', 'latitude: ${latitude}; longitude: ${longitude};');
                     placeText.setAttribute('title', '경상남도 김해시 사발면 12345');
                     placeText.setAttribute('scale', '15 15 15');
-                    scene.appendChild(placeText);
-      
+                    
+                    placeText.addEventListener('loaded', () => {
+                        window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
+                    });
+                    scene.appendChild(placeText);        
+        
       
       /*
         // than use it to load from remote APIs some places nearby
