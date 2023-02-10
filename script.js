@@ -47,28 +47,28 @@ window.onload = () => {
                     textScale = 190;
                 }else if(dist > 0.8){
                     _scale = 100;
-                    textScale = 180;
+                    textScale = 500;
                 }else if(dist > 0.7){
                     _scale = 90;
-                    textScale = 170;
+                    textScale = 450;
                 }else if(dist > 0.6){
                     _scale = 80;
-                    textScale = 160;
+                    textScale = 400;
                 }else if(dist > 0.5){
                     _scale = 70;
-                    textScale = 150;
+                    textScale = 350;
                 }else if(dist > 0.4){
                     _scale = 60;
-                    textScale = 140;
+                    textScale = 300;
                 }else if(dist > 0.3){
                     _scale = 50;
-                    textScale = 130;
+                    textScale = 250;
                 }else if(dist > 0.2){
                     _scale = 40;
-                    textScale = 120;
+                    textScale = 200;
                 }else if(dist > 0.1){
                     _scale = 30;
-                    textScale = 110;
+                    textScale = 150;
                 }else{
                     _scale = 20;
                     textScale = 100;
