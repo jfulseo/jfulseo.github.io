@@ -140,9 +140,10 @@ function getDistanceFromLatLonInKm(lat1,lng1,lat2,lng2) {
 }
 
 
-function getParameter(name) {
-    name = name.replace(/[[]/, "[").replace(/[]]/, "]");
-    var regex = new RegExp("[?&]" + name + "=([^&#]*)"),
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
         results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/+/g, " "));
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
+
