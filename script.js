@@ -1,21 +1,27 @@
 window.onload = () => {
-    let testEntityAdded = false;
+    //let testEntityAdded = false;
 
     const el = document.querySelector("[gps-new-camera]");
 
+    let lastEntity;
+    
     el.addEventListener("gps-camera-update-position", e => {
         
         const dist = getDistanceFromLatLonInKm(35.2664,129.0931,e.detail.position.latitude,e.detail.position.longitude);
         
         
-        alert(dist);
+        //alert(dist);
 
         //console.log(e);
         
-        if(!testEntityAdded) {
+        //if(!testEntityAdded) {
 
             // Add a box to the north of the initial GPS position
             //const entity = document.createElement("a-box");
+                if(lastEntity){
+                    document.querySelector("a-scene").removeChild(lastEntity);        
+                }
+        
                 const compoundEntity = document.createElement("a-entity");
                 compoundEntity.setAttribute('gps-new-entity-place', {
                     latitude: e.detail.position.latitude + 0.001,
@@ -36,22 +42,26 @@ window.onload = () => {
                 } );
             
                 const text = document.createElement("a-text");
-                const textScale = 50;
+                const textScale = 70;
                 text.setAttribute("look-at", "[gps-new-camera]");
                 text.setAttribute("scale", {
                     x: textScale,
                     y: textScale,
                     z: textScale
                 });
-                text.setAttribute("value", "경남김해시사발면1277");
+                if(dist > 1){
+                    text.setAttribute("value", dist.toFixed(2) +"km");
+                }else{
+                    text.setAttribute("value", (dist.toFixed(2)*1000)+"m");
+                }
                 text.setAttribute("align", "center");
                 compoundEntity.appendChild(box);
                 compoundEntity.appendChild(text);
                 document.querySelector("a-scene").appendChild(compoundEntity);            
+                lastEntity = compoundEntity;
             
-            
-        }
-        testEntityAdded = true;
+        //}
+        //testEntityAdded = true;
         
         
     });
