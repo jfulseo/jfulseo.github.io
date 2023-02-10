@@ -33,14 +33,14 @@ window.onload = () => {
                 } );
             
                 const text = document.createElement("a-text");
-                const textScale = 20;
+                const textScale = 50;
                 text.setAttribute("look-at", "[gps-new-camera]");
                 text.setAttribute("scale", {
                     x: textScale,
                     y: textScale,
                     z: textScale
                 });
-                text.setAttribute("value", "경남 김해시 사발면 1277");
+                text.setAttribute("value", "경남김해시사발면1277");
                 text.setAttribute("align", "center");
                 compoundEntity.appendChild(box);
                 compoundEntity.appendChild(text);
