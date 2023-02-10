@@ -37,6 +37,7 @@ window.onload = () => {
                 const box = document.createElement("a-box");
         
                 let _scale = 20;
+        /*
                 if(dist > 1){
                     _scale = 20;
                 }else if(dist > 0.9){
@@ -60,7 +61,7 @@ window.onload = () => {
                 }else{
                     _scale = 10;                  
                 }
-        
+       */ 
                 box.setAttribute("scale", {
                     x: _scale,
                     y: _scale,
