@@ -5,8 +5,8 @@ window.onload = () => {
 
     let lastEntity;
 
-    const _latitude = 35.2671;
-    const _longitude = 129.089;
+    const _latitude = 35.267;
+    const _longitude = 129.0923;
 
     
     el.addEventListener("gps-camera-update-position", e => {
@@ -73,7 +73,7 @@ window.onload = () => {
             y: _scale,
             z: _scale
         });
-        box.setAttribute('material', { color: 'red' } );
+        box.setAttribute('material', { color: 'blue' } );
         box.setAttribute("position", {
             x : 0,
             y : 15,
