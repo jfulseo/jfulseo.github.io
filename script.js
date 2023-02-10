@@ -5,17 +5,17 @@ window.onload = () => {
 
     let lastEntity;
 
-    const latitude = 35.2664;
-    const longitude = 129.0931;
+    const _latitude = 35.2664;
+    const _longitude = 129.0931;
 
     
     el.addEventListener("gps-camera-update-position", e => {
         
         
         // 거리
-        const dist = getDistanceFromLatLonInKm(latitude,longitude,e.detail.position.latitude,e.detail.position.longitude);
+        const dist = getDistanceFromLatLonInKm(_latitude, _longitude, e.detail.position.latitude,e.detail.position.longitude);
         // 각도
-        const bear = bearing(latitude,longitude,e.detail.position.latitude,e.detail.position.longitude);
+        const bear = bearing(_latitude, _longitude, e.detail.position.latitude,e.detail.position.longitude);
 
 
         //console.log(e);
@@ -30,8 +30,8 @@ window.onload = () => {
         
                 const compoundEntity = document.createElement("a-entity");
                 compoundEntity.setAttribute('gps-new-entity-place', {
-                    latitude: e.detail.position.latitude + 0.001,
-                    longitude: e.detail.position.longitude
+                    latitude: _latitude,
+                    longitude: _longitude
                 });
             
                 const box = document.createElement("a-box");
