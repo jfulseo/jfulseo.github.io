@@ -16,7 +16,7 @@ window.onload = () => {
         // 거리
         const dist = getDistanceFromLatLonInKm(_latitude, _longitude, e.detail.position.latitude,e.detail.position.longitude);
 
-        alert(dist);
+        
         
         if(lastEntity){
             document.querySelector("a-scene").removeChild(lastEntity);        
@@ -97,6 +97,8 @@ window.onload = () => {
             _txt = dist.toFixed(3)*1000 + 'm';
         }
 
+        alert(_txt);
+        
         text.setAttribute("value", _txt);
         text.setAttribute("align", "center");
         compoundEntity.appendChild(box);
