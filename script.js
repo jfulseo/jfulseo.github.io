@@ -87,7 +87,7 @@ window.onload = () => {
                 if(dist > 1){
                     _txt = dist.toFixed(2) + "km," + bear;
                 }else{
-                    _txt = dist.toFixed(3)*1000) + "m," + bear;
+                    _txt = (dist.toFixed(3)*1000) + "m," + bear;
                 }
         
                 text.setAttribute("value", _txt);
