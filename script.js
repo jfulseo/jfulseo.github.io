@@ -33,7 +33,7 @@ window.onload = () => {
                 } );
             
                 const text = document.createElement("a-text");
-                const textScale = 100;
+                const textScale = 20;
                 text.setAttribute("look-at", "[gps-new-camera]");
                 text.setAttribute("scale", {
                     x: textScale,
