@@ -3,6 +3,8 @@ window.onload = () => {
 
     const el = document.querySelector("[gps-new-camera]");
 
+    alert(el);
+    
     el.addEventListener("gps-camera-update-position", e => {
         if(!testEntityAdded) {
             alert(`Got first GPS position: lon ${e.detail.position.longitude} lat ${e.detail.position.latitude}`);
