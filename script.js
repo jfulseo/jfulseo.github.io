@@ -7,7 +7,7 @@ window.onload = () => {
 
       
                     const placeText = document.createElement('a-link');
-                    placeText.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
+                    placeText.setAttribute('gps-entity-place', 'latitude: ${latitude}; longitude: ${longitude};');
                     placeText.setAttribute('title', '경상남도 김해시 사발면 12345');
                     placeText.setAttribute('scale', '15 15 15');
                     scene.appendChild(placeText);
