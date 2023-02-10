@@ -5,7 +5,8 @@ window.onload = () => {
 
     el.addEventListener("gps-camera-update-position", e => {
         
-        console.log(e);
+        alert(e);
+        //console.log(e);
         /*
         if(!testEntityAdded) {
 
