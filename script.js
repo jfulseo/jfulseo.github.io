@@ -15,7 +15,7 @@ window.onload = () => {
         // 거리
         const dist = getDistanceFromLatLonInKm(_latitude, _longitude, e.detail.position.latitude,e.detail.position.longitude);
         // 각도
-        const bear = bearing(_latitude, _longitude, e.detail.position.latitude,e.detail.position.longitude);
+        //const bear = bearing(_latitude, _longitude, e.detail.position.latitude,e.detail.position.longitude);
 
 
         //console.log(e);
@@ -82,9 +82,9 @@ window.onload = () => {
                     z: textScale
                 });
                 if(dist > 1){
-                    text.setAttribute("value", dist.toFixed(3) +"km"+bear+"°");
+                    text.setAttribute("value", dist.toFixed(3) +"km");
                 }else{
-                    text.setAttribute("value", (dist.toFixed(3)*1000)+"m"+bear+"°");
+                    text.setAttribute("value", (dist.toFixed(3)*1000)+"m");
                 }
                 text.setAttribute("align", "center");
                 compoundEntity.appendChild(box);
