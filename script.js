@@ -79,7 +79,7 @@ window.onload = () => {
                     y: _scale,
                     z: _scale
                 });
-                box.setAttribute('material', { color: 'blue' } );
+                box.setAttribute('material', { color: 'red' } );
                 box.setAttribute("position", {
                     x : 0,
                     y : 20,
@@ -97,9 +97,9 @@ window.onload = () => {
         
                 let _txt = "text";
                 if(dist > 1){
-                    _txt = dist.toFixed(2) + "km";
+                    _txt = dist.toFixed(2) + "k";
                 }else{
-                    _txt = (dist.toFixed(3)*1000) + "m";
+                    _txt = (dist.toFixed(3)*1000);
                 }
         
                 text.setAttribute("value", _txt);
