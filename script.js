@@ -36,7 +36,7 @@ window.onload = () => {
             
                 const box = document.createElement("a-box");
         
-                let _scale = 20;
+                const _scale = 20;
         /*
                 if(dist > 1){
                     _scale = 20;
@@ -67,7 +67,7 @@ window.onload = () => {
                     y: _scale,
                     z: _scale
                 });
-                box.setAttribute('material', { color: 'red' } );
+                box.setAttribute('material', { color: 'blue' } );
                 box.setAttribute("position", {
                     x : 0,
                     y : 20,
@@ -85,9 +85,9 @@ window.onload = () => {
         
                 let _txt = "text";
                 if(dist > 1){
-                    _txt = dist.toFixed(2) + "km," + bear;
+                    _txt = dist.toFixed(2) + "km";
                 }else{
-                    _txt = (dist.toFixed(3)*1000) + "m," + bear;
+                    _txt = (dist.toFixed(2)*1000) + "m";
                 }
         
                 text.setAttribute("value", _txt);
