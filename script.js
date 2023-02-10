@@ -50,9 +50,9 @@ window.onload = () => {
                     z: textScale
                 });
                 if(dist > 1){
-                    text.setAttribute("value", dist.toFixed(2) +"km");
+                    text.setAttribute("value", dist.toFixed(3) +"km");
                 }else{
-                    text.setAttribute("value", (dist.toFixed(2)*1000)+"m");
+                    text.setAttribute("value", (dist.toFixed(3)*1000)+"m");
                 }
                 text.setAttribute("align", "center");
                 compoundEntity.appendChild(box);
