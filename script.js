@@ -5,8 +5,8 @@ window.onload = () => {
 
     let lastEntity;
 
-    const _latitude = 35.2664;
-    const _longitude = 129.0931;
+    const _latitude = 35.263;
+    const _longitude = 129.0836;
 
     
     el.addEventListener("gps-camera-update-position", e => {
