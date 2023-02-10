@@ -36,32 +36,44 @@ window.onload = () => {
             
                 const box = document.createElement("a-box");
         
-                const _scale = 20;
-        /*
+                let _scale = 100;
+                let textScale = 100;
+        
                 if(dist > 1){
-                    _scale = 20;
+                    _scale = 120;
+                    textScale = 200;
                 }else if(dist > 0.9){
-                    _scale = 19;
+                    _scale = 110;
+                    textScale = 190;
                 }else if(dist > 0.8){
-                    _scale = 18;
+                    _scale = 100;
+                    textScale = 180;
                 }else if(dist > 0.7){
-                    _scale = 17;
+                    _scale = 90;
+                    textScale = 170;
                 }else if(dist > 0.6){
-                    _scale = 16;
+                    _scale = 80;
+                    textScale = 160;
                 }else if(dist > 0.5){
-                    _scale = 15;
+                    _scale = 70;
+                    textScale = 150;
                 }else if(dist > 0.4){
-                    _scale = 14;
+                    _scale = 60;
+                    textScale = 140;
                 }else if(dist > 0.3){
-                    _scale = 13;
+                    _scale = 50;
+                    textScale = 130;
                 }else if(dist > 0.2){
-                    _scale = 12;
+                    _scale = 40;
+                    textScale = 120;
                 }else if(dist > 0.1){
-                    _scale = 11;
+                    _scale = 30;
+                    textScale = 110;
                 }else{
-                    _scale = 10;                  
+                    _scale = 20;
+                    textScale = 100;
                 }
-       */ 
+        
                 box.setAttribute("scale", {
                     x: _scale,
                     y: _scale,
@@ -75,7 +87,7 @@ window.onload = () => {
                 } );
             
                 const text = document.createElement("a-text");
-                const textScale = 100;
+
                 text.setAttribute("look-at", "[gps-new-camera]");
                 text.setAttribute("scale", {
                     x: textScale,
@@ -87,7 +99,7 @@ window.onload = () => {
                 if(dist > 1){
                     _txt = dist.toFixed(2) + "km";
                 }else{
-                    _txt = (dist.toFixed(2)*1000) + "m";
+                    _txt = (dist.toFixed(3)*1000) + "m";
                 }
         
                 text.setAttribute("value", _txt);
