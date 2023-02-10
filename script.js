@@ -5,9 +5,10 @@ window.onload = () => {
 
     el.addEventListener("gps-camera-update-position", e => {
         
-        alert(e);
+        alert(e.detail.position.latitude +", "+testEntityAdded);
+
         //console.log(e);
-        /*
+        
         if(!testEntityAdded) {
 
             // Add a box to the north of the initial GPS position
@@ -24,10 +25,10 @@ window.onload = () => {
             });
             document.querySelector("a-scene").appendChild(entity);
             
-            console.log(e);
+            //console.log(e);
         }
         testEntityAdded = true;
-        */
+        
         
     });
 };
