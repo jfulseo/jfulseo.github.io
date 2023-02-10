@@ -82,11 +82,15 @@ window.onload = () => {
                     y: textScale,
                     z: textScale
                 });
+        
+                let _txt = "text";
                 if(dist > 1){
-                    text.setAttribute("value", dist.toFixed(2)+"km,"+bear+"°");
+                    _txt = dist.toFixed(2) + "km," + bear;
                 }else{
-                    text.setAttribute("value", (dist.toFixed(2)*1000)+"m,"+bear+"°");
+                    _txt = dist.toFixed(3)*1000) + "m," + bear;
                 }
+        
+                text.setAttribute("value", _txt);
                 text.setAttribute("align", "center");
                 compoundEntity.appendChild(box);
                 compoundEntity.appendChild(text);
