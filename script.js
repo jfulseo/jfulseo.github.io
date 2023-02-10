@@ -83,9 +83,9 @@ window.onload = () => {
                     z: textScale
                 });
                 if(dist > 1){
-                    text.setAttribute("value", dist.toFixed(3));
+                    text.setAttribute("value", dist.toFixed(2));
                 }else{
-                    text.setAttribute("value", (dist.toFixed(3)*1000));
+                    text.setAttribute("value", (dist.toFixed(2)*1000));
                 }
                 text.setAttribute("align", "center");
                 compoundEntity.appendChild(box);
