@@ -32,40 +32,52 @@ window.onload = () => {
 
         let _scale = 100;
         let textScale = 600;
+        let _p = 20;
 
         if(dist > 1){
             _scale = 120;
+            _p = 122;
             textScale = 600;
         }else if(dist > 0.9){
             _scale = 110;
+            _p = 112;
             textScale = 550;
         }else if(dist > 0.8){
             _scale = 100;
+            _p = 102;
             textScale = 500;
         }else if(dist > 0.7){
             _scale = 90;
+            _p = 92;
             textScale = 450;
         }else if(dist > 0.6){
             _scale = 80;
+            _p = 82;
             textScale = 400;
         }else if(dist > 0.5){
             _scale = 70;
+            _p = 72;
             textScale = 350;
         }else if(dist > 0.4){
             _scale = 60;
+            _p = 62;
             textScale = 300;
         }else if(dist > 0.3){
             _scale = 50;
+            _p = 52;
             textScale = 250;
         }else if(dist > 0.2){
             _scale = 40;
+            _p = 42;
             textScale = 200;
         }else if(dist > 0.1){
             _scale = 30;
+            _p = 32;
             textScale = 150;
         }else{
             _scale = 20;
             textScale = 100;
+            _p = 22;
         }
 
         box.setAttribute("scale", {
@@ -76,7 +88,7 @@ window.onload = () => {
         box.setAttribute('material', { color: 'red' } );
         box.setAttribute("position", {
             x : 0,
-            y : 25,
+            y : _p,
             z: 0
         } );
 
