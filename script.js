@@ -138,3 +138,11 @@ function getDistanceFromLatLonInKm(lat1,lng1,lat2,lng2) {
     var d = R * c; // Distance in km
     return d;
 }
+
+
+function getParameter(name) {
+    name = name.replace(/[[]/, "[").replace(/[]]/, "]");
+    var regex = new RegExp("[?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/+/g, " "));
+}
