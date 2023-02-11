@@ -9,6 +9,9 @@
 </head>
 <body>
 <a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: true' renderer='antialias: true; alpha: true'>
+    <a-assets>
+        <a-asset-item id="map_pin" src="./scene.gltf"></a-asset-item>
+    </a-assets>    
     <a-camera gps-new-camera='gpsMinDistance: 100'></a-camera>    
 </a-scene>
 </body>
