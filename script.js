@@ -31,7 +31,7 @@ window.onload = () => {
             longitude: _longitude
         });
 
-        const box = document.createElement("map_pin");
+        const box = document.createElement("#map_pin");
 
         let _scale = 100;
         let textScale = 600;
