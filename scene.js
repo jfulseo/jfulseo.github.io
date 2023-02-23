@@ -8,8 +8,8 @@ window.onload = () => {
     //const _latitude = getParameterByName("lat");
     //const _longitude = getParameterByName("lng");
 
-    const _latitude = 35.2663;
-//35.2676;
+    const _latitude = 35.2663;//35.2676;
+
     const _longitude = 129.0924;//129.0859;
 
     
@@ -23,6 +23,7 @@ window.onload = () => {
         } catch (error) {
             console.error(error);
         }
+        alert(dist);
         
         if(lastEntity){
             document.querySelector("a-scene").removeChild(lastEntity);        
