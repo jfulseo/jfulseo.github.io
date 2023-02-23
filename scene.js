@@ -1,25 +1,27 @@
 window.onload = () => {
-    //let testEntityAdded = false;
 
     const el = document.querySelector("[gps-new-camera]");
 
     let lastEntity;
 
-    //const _latitude = 35.2676;
-    //const _longitude = 129.0859;
 
-    const _latitude = getParameterByName("lat");
-    const _longitude = getParameterByName("lng");
-    
+    //const _latitude = getParameterByName("lat");
+    //const _longitude = getParameterByName("lng");
+
+    const _latitude = 35.2676;
+    const _longitude = 129.0859;
+
     
     el.addEventListener("gps-camera-update-position", e => {
         
 
-        
         // 거리
-        const dist = getDistanceFromLatLonInKm(_latitude, _longitude, e.detail.position.latitude,e.detail.position.longitude);
-
-        
+        var dist = 0;
+        try {
+            dist = getDistanceFromLatLonInKm(_latitude, _longitude, e.detail.position.latitude,e.detail.position.longitude);
+        } catch (error) {
+            console.error(error);
+        }
         
         if(lastEntity){
             document.querySelector("a-scene").removeChild(lastEntity);        
@@ -38,49 +40,49 @@ window.onload = () => {
         let _p = 20;
 
         if(dist > 1){
-            _scale = 120;
-            _p = 122;
+            _scale = 100;
+            _p = 100;
             textScale = 600;
         }else if(dist > 0.9){
-            _scale = 110;
-            _p = 112;
-            textScale = 550;
+            _scale = 91;
+            _p = 91;
+            textScale = 549;
         }else if(dist > 0.8){
-            _scale = 100;
-            _p = 102;
-            textScale = 500;
-        }else if(dist > 0.7){
-            _scale = 90;
-            _p = 92;
-            textScale = 450;
-        }else if(dist > 0.6){
-            _scale = 80;
+            _scale = 82;
             _p = 82;
-            textScale = 400;
+            textScale = 498;
+        }else if(dist > 0.7){
+            _scale = 73;
+            _p = 73;
+            textScale = 447;
+        }else if(dist > 0.6){
+            _scale = 64;
+            _p = 64;
+            textScale = 396;
         }else if(dist > 0.5){
-            _scale = 70;
-            _p = 72;
-            textScale = 350;
+            _scale = 55;
+            _p = 55;
+            textScale = 345;
         }else if(dist > 0.4){
-            _scale = 60;
-            _p = 62;
-            textScale = 300;
+            _scale = 46;
+            _p = 46;
+            textScale = 294;
         }else if(dist > 0.3){
-            _scale = 50;
-            _p = 52;
-            textScale = 250;
+            _scale = 37;
+            _p = 37;
+            textScale = 243;
         }else if(dist > 0.2){
-            _scale = 40;
-            _p = 42;
-            textScale = 200;
+            _scale = 28;
+            _p = 28;
+            textScale = 192;
         }else if(dist > 0.1){
-            _scale = 30;
-            _p = 32;
-            textScale = 150;
+            _scale = 19;
+            _p = 19;
+            textScale = 141;
         }else{
-            _scale = 20;
-            textScale = 100;
-            _p = 22;
+            _scale = 10;
+            _p = 10;
+            textScale = 90;
         }
 
         box.setAttribute("scale", {
@@ -96,7 +98,7 @@ window.onload = () => {
         } );
 
         const text = document.createElement("a-text");
-        //textScale =100;
+
         text.setAttribute("look-at", "[gps-new-camera]");
         text.setAttribute("scale", {
             x: textScale,
@@ -111,8 +113,6 @@ window.onload = () => {
         }else{
             _txt = dist.toFixed(3)*1000 + 'm';
         }
-
-        //alert(_txt);
         
         text.setAttribute("value", _txt);
         text.setAttribute("align", "center");
