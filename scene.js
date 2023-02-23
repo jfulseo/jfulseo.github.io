@@ -23,7 +23,7 @@ window.onload = () => {
         } catch (error) {
             console.error(error);
         }
-        alert(dist);
+
         
         if(lastEntity){
             document.querySelector("a-scene").removeChild(lastEntity);        
@@ -112,7 +112,7 @@ window.onload = () => {
         });
 
         let _txt = dist.toFixed(2);
-
+        alert(_txt);
         if(dist > 1){
             _txt = dist.toFixed(2) + 'km';
         }else{
