@@ -33,7 +33,10 @@ window.onload = () => {
             longitude: _longitude
         });
 
-        const box = document.createElement("a-box");
+        
+        //const box = document.createElement("a-box");
+        const box = document.createElement("a-entity");
+        box.setAttribute('gltf-model','./scene.gltf');
 
         let _scale = 100;
         let textScale = 600;
