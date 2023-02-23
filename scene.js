@@ -47,44 +47,44 @@ window.onload = () => {
             _p = 100;
             textScale = 600;
         }else if(dist > 0.9){
-            _scale = 91;
-            _p = 91;
+            _scale = 92;
+            _p = 92;
             textScale = 549;
         }else if(dist > 0.8){
-            _scale = 82;
-            _p = 82;
+            _scale = 84;
+            _p = 84;
             textScale = 498;
         }else if(dist > 0.7){
-            _scale = 73;
-            _p = 73;
+            _scale = 76;
+            _p = 76;
             textScale = 447;
         }else if(dist > 0.6){
-            _scale = 64;
-            _p = 64;
+            _scale = 68;
+            _p = 68;
             textScale = 396;
         }else if(dist > 0.5){
-            _scale = 55;
-            _p = 55;
+            _scale = 60;
+            _p = 60;
             textScale = 345;
         }else if(dist > 0.4){
-            _scale = 46;
-            _p = 46;
+            _scale = 52;
+            _p = 52;
             textScale = 294;
         }else if(dist > 0.3){
-            _scale = 37;
-            _p = 37;
+            _scale = 44;
+            _p = 44;
             textScale = 243;
         }else if(dist > 0.2){
-            _scale = 28;
-            _p = 28;
+            _scale = 36;
+            _p = 36;
             textScale = 192;
         }else if(dist > 0.1){
-            _scale = 19;
-            _p = 19;
+            _scale = 28;
+            _p = 28;
             textScale = 141;
         }else{
-            _scale = 10;
-            _p = 10;
+            _scale = 20;
+            _p = 20;
             textScale = 90;
         }
 
