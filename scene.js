@@ -112,12 +112,14 @@ window.onload = () => {
         });
 
         let _txt = dist.toFixed(2);
-        alert(_txt);
-        if(dist > 1){
+
+        if(dist > 1.0){
             _txt = dist.toFixed(2) + 'km';
         }else{
             _txt = dist.toFixed(3)*1000 + 'm';
         }
+        alert(_txt);
+        
         
         text.setAttribute("value", _txt);
         text.setAttribute("align", "center");
